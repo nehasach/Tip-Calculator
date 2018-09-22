@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tip Calculator</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/javascript">
+	function Calculate(){
+		var amount=document.getElementById("amount").value;
+		var people=document.getElementById("people").value;
+		var tip=document.getElementById("service").value;
+		console.log(amount);
+		console.log(people);
+		console.log(tip);
+		var calculatedAmount;
+		
+		if(amount!="" && people!=""){
+			
+		var calculatedAmount = ((tip/100)*amount)/people;
+		document.getElementById("value").innerHTML="Each person pays: "+calculatedAmount.toFixed(2)+" $";
+	}
+	else{
+		alert("please fill in all the fields!");
+	}
+	}
+</script>
+
+<style type="text/css">
+	body{
+		background: maroon;
+		color: black;
+	}
+		.container{
+			background-color: black;
+			border: 2px solid black;
+			margin-top: 15%;
+			width: 50%;
+			color: white;
+			padding:0;
+			border-radius:25px;
+		}
+		.Calculator{
+			background-color: white;
+			padding: 2%;
+			color: black;
+		}
+		h4{
+			padding-left: 2%;
+		}
+		p{
+			color:black;
+			padding-left:2%
+		}
+		.amount{
+			padding-top: 2%;
+		}
+		label{
+			color: black;
+			pad
+		}
+		.form-control{
+			width:50%;
+		}
+	select{
+		font-family: Font Awesome\ 5 Free; 
+
+	}
+	#value{
+		color: black;
+		margin-top: 3%;
+		font-size: 25px;
+	}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<h4>Tip Calculator</h4>
+
+	<div class="Calculator">
+	<form>
+	
+  <div class="form-group">
+    <label for="amount">Enter the Total Amount?</label>
+    <input type="number" class="form-control" id="amount" placeholder="Enter amount in $" required>
+    </div>
+
+  <div class="form-group">
+    <label for="people">How many people are sharing the bill?</label>
+    <input type="number" class="form-control" id="people" placeholder="No. of people" required>
+     </div>
+
+    <div class="form-group">
+    <label for="service">How was your service?</label>
+    <select class="form-control" id="service">
+      <option value="5"> &#xf11a; 5% Bad</option>
+      <option value="10">&#xf11a; 10% It was Ok</option>
+      <option value="15"> &#xf118; 15% Very Good </option>
+      <option value="20"> &#xf118; 20% Outstanding</option>
+     </select>
+  </div>
+  
+  <button type="button" class="btn btn-success" onclick="Calculate()">Calculate</button>
+
+  
+</form>
+<div>
+	<hr/>
+<span id="value"></span>
+
+
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
